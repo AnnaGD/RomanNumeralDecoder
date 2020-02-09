@@ -24,25 +24,27 @@ function romanNumeralDecoder(romanNumeral) {
     // In the if statment romanMap['I'] is less then romanMap['V'] then the decodedValue needs to be updated to the greater value minus the smaller value, which in this case romanMap['V'] - romanMap['I'] is 4 and the decodedValue is assigned a new value of 4.
     // The else statment allows the decodedValue to be updated to romanMap[] in the case that the romanMap[romanNumeral[i+1]] being less than the romanMap[romanNumeral[i]]
 		if (romanMap[romanNumeral[i]] < romanMap[romanNumeral[i + 1]]) {
-            console.log ('if romanMap : ' + romanMap[romanNumeral[i + 1]])
+            // console.log ('if romanMap : ' + romanMap[romanNumeral[i + 1]])
 
             decodedValue += romanMap[romanNumeral[i + 1]] - romanMap[romanNumeral[i]];
-            console.log('if decodedValue : ' + decodedValue)
-
-			}   else  if (romanMap[romanNumeral[i]] >= romanMap[romanNumeral[i + 1]]) {
-            console.log('else if romanMap : ' + romanMap[romanNumeral[i + 1]])
+            // console.log('if decodedValue : ' + decodedValue)
+            return decodedValue;
+            // break
+            }   
+            else  if (romanMap[romanNumeral[i]] >= romanMap[romanNumeral[i + 1]]) {
+            // console.log('else if romanMap : ' + romanMap[romanNumeral[i + 1]])
 
 			  decodedValue += romanMap[romanNumeral[i]]
             // console.log('elseif decodedValue :' + decodedValue)
             }
             else {
                 decodedValue += romanMap[romanNumeral[i]]
-              console.log('else decodedValue :' + decodedValue)
+            //   console.log('else decodedValue :' + decodedValue)
             }
 	}
 	return decodedValue;
 }
 
-console.log('III :' + romanNumeralDecoder("III"))
+console.log('IXX :' + romanNumeralDecoder("IXX"))
 
 console.log(romanNumeralDecoder("III") === 3);
