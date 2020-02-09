@@ -27,14 +27,15 @@ function romanNumeralDecoder(romanNumeral) {
             // console.log ('if romanMap : ' + romanMap[romanNumeral[i + 1]])
 
             decodedValue += romanMap[romanNumeral[i + 1]] - romanMap[romanNumeral[i]];
+            decodedValue -= romanMap[romanNumeral[i + 1]] //not a permanent solution, but returns the correct value
             // console.log('if decodedValue : ' + decodedValue)
-            return decodedValue;
+            // return decodedValue;
             // break
             }   
             else  if (romanMap[romanNumeral[i]] >= romanMap[romanNumeral[i + 1]]) {
-            // console.log('else if romanMap : ' + romanMap[romanNumeral[i + 1]])
+            console.log('else if romanMap : ' + romanMap[romanNumeral[i + 1]])
 
-			  decodedValue += romanMap[romanNumeral[i]]
+			decodedValue += romanMap[romanNumeral[i]]
             // console.log('elseif decodedValue :' + decodedValue)
             }
             else {
@@ -45,6 +46,6 @@ function romanNumeralDecoder(romanNumeral) {
 	return decodedValue;
 }
 
-console.log('IXX :' + romanNumeralDecoder("IXX"))
+console.log('CD :' + romanNumeralDecoder("CD"))
 
-console.log(romanNumeralDecoder("III") === 3);
+console.log(romanNumeralDecoder("V") === 5);
