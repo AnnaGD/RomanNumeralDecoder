@@ -25,21 +25,24 @@ function romanNumeralDecoder(romanNumeral) {
     // The else statment allows the decodedValue to be updated to romanMap[] in the case that the romanMap[romanNumeral[i+1]] being less than the romanMap[romanNumeral[i]]
 		if (romanMap[romanNumeral[i]] < romanMap[romanNumeral[i + 1]]) {
             console.log ('if romanMap : ' + romanMap[romanNumeral[i + 1]])
+
             decodedValue += romanMap[romanNumeral[i + 1]] - romanMap[romanNumeral[i]];
             console.log('if decodedValue : ' + decodedValue)
+
 			}   else  if (romanMap[romanNumeral[i]] >= romanMap[romanNumeral[i + 1]]) {
             console.log('else if romanMap : ' + romanMap[romanNumeral[i + 1]])
+
 			  decodedValue += romanMap[romanNumeral[i]]
-            console.log('elseif decodedValue :' + decodedValue)
+            // console.log('elseif decodedValue :' + decodedValue)
             }
-            // else {
-            //     decodedValue += romanMap[romanNumeral[i]]
-            //   console.log('else decodedValue :' + decodedValue)
-            // }
+            else {
+                decodedValue += romanMap[romanNumeral[i]]
+              console.log('else decodedValue :' + decodedValue)
+            }
 	}
 	return decodedValue;
 }
 
-// console.log(romanNumeralDecoder("IV"))
+console.log('III :' + romanNumeralDecoder("III"))
 
-console.log(romanNumeralDecoder("III") === 2);
+console.log(romanNumeralDecoder("III") === 3);
